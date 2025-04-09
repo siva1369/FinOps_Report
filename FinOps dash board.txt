@@ -1,0 +1,113 @@
+FinOps dash board:-
+------------------
+
+
+Features
+
+Current & last month's total spend
+Cost by AWS service
+AWS Budgets info (limit, actual)
+EC2 instance status (running/stopped) across regions
+Beautifully styled terminal UI
+
+
+
+
+requirements:
+
+
+Python 3.11
+boto3==1.37.28
+botocore==1.37.28
+jmespath==1.0.1
+markdown-it-py==3.0.0
+mdurl==0.1.2
+Pygments==2.19.1
+rich==14.0.0
+s3transfer==0.11.4
+six==1.17.0
+urllib3==2.3.0
+
+
+
+Prerequisites
+
+Python 3.8 or later
+AWS CLI configured with named profiles
+AWS credentials with permissions for:
+
+
+first clone the environment and script
+
+git clone https://github.com/ravikiranvm/aws-finops-dashboard.git
+cd aws-finops-dashboard
+
+
+set up the environment using powershell 
+
+
+
+navigate the project 
+
+cd "C:\Users\sivaa\OneDrive\Desktop\python\aws-finops-dashboard"
+
+
+
+activate virtual environment
+
+.\venv\Scripts\Activate.ps1
+
+
+
+install python 
+
+pip install boto3 rich
+
+
+run the script (before run we should configure aws cloud)
+
+python dashboard.py
+
+
+
+
+Configure AWS CLI profiles for each account:
+
+For each account (example: 05, 02, 03, 04), run:
+
+
+aws configure --profile 05
+aws configure --profile 02
+aws configure --profile 03
+aws configure --profile 04
+
+
+For each, you will be prompted to enter:
+
+AWS Access Key ID
+
+AWS Secret Access Key
+
+Default region name (like us-east-1)
+
+Output format (optional, json is fine)
+
+
+verify the profile is working or not
+
+aws sts get-caller-identity --profile 05
+
+
+then if you run the the script 
+
+
+python dashboard.py
+
+
+you will get a dashboard
+
+
+
+
+
+
